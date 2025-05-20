@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 196 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 196 100% 50%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 196 100% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 196 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.neural-bg {
+  background-image: radial-gradient(circle at 10% 20%, rgba(0, 153, 255, 0.05) 0%, rgba(0, 153, 255, 0) 90%),
+    radial-gradient(circle at 90% 80%, rgba(0, 153, 255, 0.05) 0%, rgba(0, 153, 255, 0) 90%);
+  background-size: 100% 100%;
+}
+
+.dark .neural-bg {
+  background-image: radial-gradient(circle at 10% 20%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 90%),
+    radial-gradient(circle at 90% 80%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 90%);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-500;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Neural animation */
+.neural-node {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 153, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.8);
+}
+
+.neural-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 153, 255, 0) 0%, rgba(0, 153, 255, 0.5) 50%, rgba(0, 153, 255, 0) 100%);
+  transform-origin: left center;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card hover effects */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .hover-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 153, 255, 0.1), 0 10px 10px -5px rgba(0, 153, 255, 0.08);
+}
+
+/* Consistent color scheme */
+.bg-gradient-to-b {
+  transition: background-color 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .section-padding,
+  .hover-card,
+  .bg-gradient-to-b {
+    transition: none;
+  }
+}
