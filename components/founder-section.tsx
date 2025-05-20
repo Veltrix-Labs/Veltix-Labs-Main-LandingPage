@@ -1,10 +1,11 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import Image from "next/image"
-import { Linkedin, Github, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { motion, useInView } from "framer-motion"
+import { Github, Instagram, Linkedin } from "lucide-react"
+import Image from "next/image"
+import { useRef } from "react"
+import RamImage from "./images/ppm1.png"
 
 export default function FounderSection() {
   const ref = useRef(null)
@@ -50,7 +51,7 @@ export default function FounderSection() {
               <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-cyan-500 p-6 flex flex-col justify-center items-center">
                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white mb-4">
                   <Image
-                    src="/placeholder.svg?height=128&width=128"
+                    src={RamImage}
                     alt="Ramu R"
                     width={128}
                     height={128}
@@ -62,7 +63,7 @@ export default function FounderSection() {
 
                 <div className="flex space-x-4 mt-6">
                   <a
-                    href="https://linkedin.com/in/ramu-r"
+                    href="https://www.linkedin.com/in/ramu-r-nayak1904"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-blue-200 transition-colors"
@@ -70,7 +71,7 @@ export default function FounderSection() {
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://github.com/ramu-r"
+                    href="https://github.com/ramu1904"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-blue-200 transition-colors"
@@ -78,7 +79,7 @@ export default function FounderSection() {
                     <Github className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://instagram.com/ramu_r"
+                    href="https://www.instagram.com/__ramu1904?igsh=N3NyeGlwOWI5bzNt"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-blue-200 transition-colors"
@@ -105,7 +106,7 @@ export default function FounderSection() {
                 <Button
                   variant="outline"
                   className="border-blue-500 text-blue-400 hover:bg-blue-950/50 dark:text-blue-400 dark:border-blue-400"
-                  onClick={() => (window.location.href = "mailto:veltrixlabsfornextgen@gmail.com")}
+                  onClick={() => (window.location.href = "mailto:ramuconnect45@gmail.com")}
                 >
                   Connect with Ramu
                 </Button>
